@@ -1,0 +1,2 @@
+ALTER TABLE flights DROP COLUMN IF EXISTS duration;
+ALTER TABLE flights ADD COLUMN IF NOT EXISTS duration varchar;
