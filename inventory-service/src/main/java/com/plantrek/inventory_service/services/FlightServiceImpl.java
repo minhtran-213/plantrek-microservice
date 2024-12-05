@@ -49,4 +49,9 @@ public class FlightServiceImpl implements FlightService {
         return allFlights.map(flightEntity -> flightMapper.entityToResponse(flightEntity));
     }
 
+    @Override
+    public FlightEntity findById(String id) {
+        return flightRepository.findById(id).orElse(null);
+    }
+
 }
