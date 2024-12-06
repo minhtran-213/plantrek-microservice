@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 services:
   postgres:
     image: postgres:latest
@@ -10,17 +10,23 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - D:/work/plantrek-db:/var/lib/postgresql/data
+      - plantrek-db-data:/var/lib/postgresql/data
 
   axonserver:
     image: axoniq/axonserver:latest
     container_name: axon-server
     environment:
-      AXONIQ_AXONSERVER_STANDALONE: 'true'
+      AXONIQ_AXONSERVER_STANDALONE: "true"
     ports:
-      - "8024:8024"  # HTTP port for Axon Server dashboard
-      - "8124:8124"  # gRPC port for Axon Server clients
+      - "8024:8024" # HTTP port for Axon Server dashboard
+      - "8124:8124" # gRPC port for Axon Server clients
     volumes:
-      - D:/work/axonserver/data:/axonserver/data
-      - D:/work/axonserver/events:/axonserver/events
-      - D:/work/axonserver/config:/axonserver/config
+      - axonserver-data:/axonserver/data
+      - axonserver-events:/axonserver/events
+      - axonserver-config:/axonserver/config
+
+volumes:
+  plantrek-db-data:
+  axonserver-data:
+  axonserver-events:
+  axonserver-config:
