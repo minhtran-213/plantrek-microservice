@@ -12,22 +12,25 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "flight_schedules")
+@Table(name = "flight_schedule")
 public class FlightScheduleEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id")
     private String id;
 
     @Column(name = "flight_id")
     private String flightId;
 
-    @Column(name = "depature_time")
+    @Column(name = "departure_time")
     private LocalDateTime departureTime;
 
     @Column(name = "arrival_time")
     private LocalDateTime arrivalTime;
+
+    @Column(name = "available_seats")
+    private Integer availableSeats;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

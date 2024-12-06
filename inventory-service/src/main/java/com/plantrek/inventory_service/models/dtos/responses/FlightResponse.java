@@ -1,10 +1,12 @@
 package com.plantrek.inventory_service.models.dtos.responses;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
+@Builder
 public class FlightResponse {
 
     private String id;
