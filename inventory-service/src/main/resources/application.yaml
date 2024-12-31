@@ -5,7 +5,7 @@ spring:
     name: inventory-service
   datasource:
     url: jdbc:postgresql://localhost:5432/plantrek_inventory
-    username: user_admin
+    username: user
     password: password
   jpa:
     show-sql: true
